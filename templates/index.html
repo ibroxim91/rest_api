@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script type="application/javascript" src="vue.js"></script>
+</head>
+<body>
+
+<center><h1>Hello</h1></center>
+<div id="app">
+  <p  id="btn">{{ foo }}</p>
+  <!-- мы теперь не можем обновить `foo`! -->
+  <button @click="smena">Изменить</button>
+</div>
+
+{% for p in report %}
+<h2>{{ p }}</h2>
+{% endfor %}
+<script>
+
+var obj = {
+  foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+  el: '#app',
+  data: obj,
+  methods:{
+      smena(){
+         app.innerHTML = "Ok";
+      }
+  }
+})
+
+</script>
+</body>
+
+</html>
